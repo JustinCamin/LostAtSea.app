@@ -1,0 +1,17 @@
+.tup
+*.log
+logs/
+conf/
+nginx.conf
+nginx.conf.compiled
+mime.types
+proxy_temp/
+fastcgi_temp/
+client_body_temp/
+scgi_temp/
+uwsgi_temp/
+*.rockspec
+*.rock
+luarocks51/
+luarocks52/
+luarocks53/
