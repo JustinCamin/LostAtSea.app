@@ -1,0 +1,8 @@
+127.0.0.1 - - [27/Jan/2026:19:44:55 -0800] "GET / HTTP/1.1" 200 123 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+127.0.0.1 - - [27/Jan/2026:19:44:55 -0800] "GET /favicon.ico HTTP/1.1" 404 561 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+127.0.0.1 - - [27/Jan/2026:19:49:54 -0800] "GET / HTTP/1.1" 200 123 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+127.0.0.1 - - [27/Jan/2026:19:49:58 -0800] "GET /static/AmiraProfile HTTP/1.1" 404 561 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+127.0.0.1 - - [27/Jan/2026:19:50:01 -0800] "GET /static/AmiraProfile.jpg HTTP/1.1" 404 561 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+127.0.0.1 - - [27/Jan/2026:19:50:04 -0800] "GET /AmiraProfile.jpg HTTP/1.1" 500 1452 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+127.0.0.1 - - [27/Jan/2026:19:50:13 -0800] "GET /static/AmiraProfile.jpg HTTP/1.1" 404 561 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+127.0.0.1 - - [27/Jan/2026:19:50:26 -0800] "GET /static/AmiraProfile.jpg HTTP/1.1" 200 3833 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
