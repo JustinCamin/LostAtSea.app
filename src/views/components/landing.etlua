@@ -1,0 +1,30 @@
+<section class="mx-auto bg-[url(/static/beachlanding.jpg)] bg-center bg-cover">
+    <div class=" mx-auto w-screen max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+        <div class="mx-auto max-w-prose text-center">
+            <h1 class="text-4xl font-bold text-primary sm:text-5xl">
+                We'll help you search the
+                <strong class="text-accent group"> Seven seas</strong>!
+            </h1>
+
+            <p class="mt-4 text-base text-pretty text-text sm:text-lg/relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi. Natus, provident
+                accusamus impedit minima harum corporis iusto.
+            </p>
+
+            <div class="mt-4 flex justify-center gap-4 sm:mt-6">
+                <a class="group rounded-md border border-primary bg-primary px-8 py-3 font-medium text-white shadow-sm transition-colors duration-200 hover:bg-secondary"
+                    href="#">
+                    Login
+                    <span
+                        class="pointer-events: none; m-auto block max-w-0 group-hover:max-w-full transition-all duration-200 h-0.5 bg-accent"></span>
+                </a>
+
+                <a class="group rounded-md border border-gray-200 bg-gray-200 px-6 py-3 font-medium text-text hover:bg-gray-50 transition-colors duration-200"
+                    href="#">
+                    Register
+                    <span class="hover-underline"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

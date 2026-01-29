@@ -3,11 +3,13 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" href="/static/output.css" />
+		<script src="https://kit.fontawesome.com/f28187ed21.js" crossorigin="anonymous"></script>
         <title><%= page_title %></title>
 	</head>
-	<body>
-
+	<body class="bg-background">
+		<% render('src.views.components.header') %>
 		<% content_for('inner') %>
-		<% render('src.views.components.copyright') %>
+		<% render('src.views.components.footer') %>
 	</body>
 </html>

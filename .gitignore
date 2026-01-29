@@ -3,6 +3,7 @@
 logs/
 conf/
 nginx.conf
+input.css
 nginx.conf.compiled
 mime.types
 proxy_temp/
