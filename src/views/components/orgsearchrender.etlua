@@ -1,0 +1,11 @@
+<h1 class="max-w-4xl m-auto  w-full text-primary pt-10 font-bold my-2">
+        Your results:
+    </h1>
+<div id="org-search-results" class="max-w-4xl justify-center items-center m-auto flex flex-col mb-16 gap-2 px-5 md:px-0">
+    
+
+    <% for i, Organization in ipairs(Organizations) do %>
+    <% Organization['category'] = string.lower(page_title or "search") %>
+         <% render('src.views.components.orgsearchcard', Organization) %>
+        <% end %>
+</div>

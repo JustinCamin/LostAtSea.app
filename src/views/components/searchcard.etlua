@@ -1,0 +1,40 @@
+<li id="itemcard" class="p-2 border rounded-lg border-backgroundsecondary smooth group-hover:bg-backgroundsecondary">
+    <a href="#" class="group block overflow-hidden">
+        <img src="/api/images/<%= item_image_id %>" alt="" class="w-full rounded-lg aspect-square object-cover shrink-0 smooth">
+
+        <div class="relative pt-3">
+            <h1 class="text-lg text-text group-hover:underline group-hover:underline-offset-4">
+                <%= name %>
+            </h1>
+
+            <p class="">
+                <span class="text-textsecondary">
+                    <%= description %>
+                </span>
+            </p>
+        </div>
+
+        <div class="flex flex-row justify-end gap-2 mt-4">
+
+            <% if admin then %>
+
+                <button id=<%= "item_"..id %> class="flex items-end justify-end shrink-0">
+                    <a class="group rounded-md border border-primary bg-primary px-4 py-2 font-medium text-white text-sm shadow-sm smooth hover:bg-secondary"
+                        href="#">
+                        Approve
+                        <span class="hover-underline"></span>
+                    </a>
+                </button>
+                <% else %>
+                    <button class="flex items-end justify-end shrink-0">
+                        <a class="group rounded-md border border-primary bg-primary px-4 py-2 font-medium text-white text-sm shadow-sm smooth hover:bg-secondary"
+                            href="#">
+                            Claim Item
+                            <span class="hover-underline"></span>
+                        </a>
+                    </button>
+                    <% end %>
+        </div>
+
+    </a>
+</li>

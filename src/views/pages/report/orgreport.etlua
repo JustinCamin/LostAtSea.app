@@ -1,0 +1,75 @@
+<div class="">
+    <div
+        class="max-w-lg flex flex-col text-center justify-center m-auto items-center h-max-screen h-max pt-5 px-5 md:px-0">
+        <% render('src.views.components.breadcrumb', { crumbs = {{name = "Approvals", url = "/approval"}, {name = Organization.name, url = "/approval?organization=" .. Organization.id}}}) %>
+        <div class="pt-15"></div>
+        <div class="aspect-square w-24 h-24 shrink-0">
+            <img src="/api/images/<%= Organization.organization_image_id %>" alt="" class="w-full h-full rounded-xl object-cover">
+        </div>
+
+        <h2 class="text-4xl font-bold text-primary sm:text-3xl">
+            <strong class="text-accent group">Report</strong>
+            a found item!
+        </h2>
+    </div>
+
+    <form id="report-form" action="#" class="my-8 mx-auto max-w-md space-y-4 rounded-lg border smooth border-backgroundsecondary p-6">
+        <div>
+            <label class="block text-sm font-medium text-text" for="type">Type of Item</label>
+
+            <select
+                class="mt-1 w-full px-3 py-2 rounded-lg border smooth border-backgroundsecondary bg-backgroundsecondary hover:bg-background focus:border-primary"
+                id="type">
+                <option value="">Select an item type</option>
+                <option value="phone">Phone</option>
+                <option value="wallet">Wallet</option>
+                <option value="clothing">Clothing</option>
+                <option value="backpack">Backpack</option>
+                <option value="keys">Keys</option>
+                <option value="electronics">Electronics</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-text" for="name">Item Name</label>
+
+            <input
+                class="mt-1 w-full px-3 py-2 rounded-lg border smooth border-backgroundsecondary bg-backgroundsecondary hover:bg-background focus:border-primary"
+                id="name" type="text" placeholder="Example: “Black Nike backpack”">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-text" for="description">Description of Item</label>
+
+            <textarea
+                class="mt-1 w-full resize-none px-3 py-2 rounded-lg border smooth border-backgroundsecondary bg-backgroundsecondary hover:bg-background focus:border-primary"
+                id="description" rows="4" placeholder="Describe the item in detail"></textarea>
+        </div>
+
+        <label
+            class="flex flex-col items-center rounded-lg border smooth border-backgroundsecondary bg-backgroundsecondary hover:bg-background focus:border-primary text-text p-6">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M7.5 7.5h-.75A2.25 2.25 0 0 0 4.5 9.75v7.5a2.25 2.25 0 0 0 2.25 2.25h7.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25h-.75m0-3-3-3m0 0-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-.75">
+                </path>
+            </svg>
+
+            <span class="mt-4 font-medium"> Upload Your Photo </span>
+
+            <span
+                class="mt-2 inline-block rounded border border-gray-200 bg-gray-50 px-3 py-1.5 text-center text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-100">
+                Browse Files
+            </span>
+
+            <input multiple="false" id="report-file-selector" type="file" id="File" class="sr-only" data-cnp-create-listener="true">
+        </label>
+
+        <button
+            class="block w-full rounded-lg border border-primary bg-primary px-12 py-3 text-sm font-medium text-white smooth hover:bg-secondary"
+            type="submit">
+            Submit Report
+        </button>
+    </form>
+</div>

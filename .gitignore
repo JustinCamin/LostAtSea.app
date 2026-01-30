@@ -16,3 +16,5 @@ uwsgi_temp/
 luarocks51/
 luarocks52/
 luarocks53/
+Uploads/
+.env

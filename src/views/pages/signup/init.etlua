@@ -1,0 +1,45 @@
+<div class="">
+    <div
+        class="max-w-lg flex flex-col text-center justify-center m-auto items-center h-max-screen h-max pt-10 px-5 md:px-0">
+        <div class="aspect-square w-24 h-24 shrink-0">
+            <img src="/static/logoprimary.png" alt="" class="w-full h-full rounded-xl object-cover">
+        </div>
+
+        <h2 class="text-4xl font-bold text-primary sm:text-3xl">
+            <strong class="text-accent group">Create</strong> an account!
+        </h2>
+    </div>
+
+    <form id="signup" action="#" class="my-8 mx-auto max-w-md space-y-4 rounded-lg border smooth border-backgroundsecondary p-6">
+
+        <div>
+            <label class="block text-sm font-medium text-text" for="name">Name</label>
+
+            <input
+                class="mt-1 w-full px-3 py-2 rounded-lg border smooth border-backgroundsecondary bg-backgroundsecondary hover:bg-background focus:border-primary"
+                id="name" type="text" placeholder="Enter your name">
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-text" for="email">Email</label>
+
+            <input
+                class="mt-1 w-full px-3 py-2 rounded-lg border smooth border-backgroundsecondary bg-backgroundsecondary hover:bg-background focus:border-primary"
+                id="email" type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="pb-6">
+            <label class="block text-sm font-medium text-text" for="password">Password</label>
+
+            <input
+                class="mt-1 w-full px-3 py-2 rounded-lg border smooth border-backgroundsecondary bg-backgroundsecondary hover:bg-background focus:border-primary"
+                id="password" type="password" placeholder="Enter your password">
+        </div>
+
+        <input
+            class="block w-full group rounded-lg border border-primary bg-primary px-12 py-3 text-sm font-medium text-white smooth hover:bg-secondary"
+            type="submit" value="Sign Up">
+        </input>
+        <p class="mt-6 text-sm text-gray-700">Already have an account? <a class="text-primary hover:underline" href="/login?returnto=<%=params.returnto%>">Login!</a></p>
+    </form>
+</div>

@@ -1,0 +1,92 @@
+<section>
+    <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <header class="flex flex-row gap-2 items-center">
+            <div class="aspect-square w-24 h-24 shrink-0">
+                <img src="/api/images/<%= Organization.organization_image_id %>" alt=""
+                    class="w-full h-full rounded-xl object-cover">
+            </div>
+            <div>
+                <% render('src.views.components.breadcrumb', { crumbs = {{name = "Search", url = "/search"}, {name = Organization.name, url = "/search?organization=" .. Organization.id}}}) %>
+                <h2 class="text-xl font-bold text-text sm:text-3xl">
+                    <%= Organization.name %>
+                </h2>
+                <p class="mt-2 max-w-md text-textsecondary">
+                    <%= Organization.description %>
+                </p>
+            </div>
+        </header>
+
+        <div class="mt-8 block lg:hidden">
+            <button
+                class="flex cursor-pointer items-center gap-2 border-b border-primary pb-1 text-text transition hover:border-secondary">
+                <span class="text-sm font-medium"> Filters &amp; Sorting </span>
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-4 rtl:rotate-180">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="mt-4 lg:mt-8 lg:grid lg:grid-cols-4 lg:items-start lg:gap-8">
+            <div class="hidden space-y-4 lg:block">
+
+                <div>
+                    <p class="block text-xs font-medium text-textsecondary">Filters</p>
+
+                    <div class="mt-1 space-y-2">
+                        <details
+                            class="overflow-hidden rounded-sm border border-backgroundsecondary [&amp;_summary::-webkit-details-marker]:hidden">
+                            <summary
+                                class="flex cursor-pointer items-center bg-backgroundsecondary hover:bg-background justify-between gap-2 p-4 text-text transition">
+                                <span class="text-sm font-medium"> Item type </span>
+
+                                <span class="transition group-open:-rotate-180">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                                    </svg>
+                                </span>
+                            </summary>
+
+                            <div class="border-t border-backgroundsecondary bg-background">
+                                <header class="flex items-center justify-between p-4">
+                                    <span class="text-sm text-textsecondary"> 0 Selected </span>
+
+                                    <button type="button" class="text-sm text-text underline underline-offset-4">
+                                        Reset
+                                    </button>
+                                </header>
+
+                                <ul class="space-y-1 border-t border-backgroundsecondary p-4">
+                                    <% for i, Item in ipairs({"Phone", "Wallet" , "Clothing" , "Backpack" , "Keys"
+                                        , "Electronics" , "Other" }) do %>
+                                        <li>
+                                            <label class="inline-flex items-center gap-2 text-sm text-textsecondary">
+                                                <input type="checkbox"
+                                                    class="h-4 w-4 rounded-sm border-backgroundsecondary text-primary focus:ring-primary">
+                                                <span>
+                                                    <%= Item %>
+                                                </span>
+                                            </label>
+                                        </li>
+                                        <% end %>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3">
+                <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+                    <% for i, Report in pairs(Reports) do %>
+                        <% render('src.views.components.searchcard', Report) %>
+                            <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

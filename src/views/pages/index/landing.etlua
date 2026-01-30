@@ -12,16 +12,15 @@
             </p>
 
             <div class="mt-4 flex justify-center gap-4 sm:mt-6">
-                <a class="group rounded-md border border-primary bg-primary px-8 py-3 font-medium text-white shadow-sm transition-colors duration-200 hover:bg-secondary"
-                    href="#">
-                    Login
-                    <span
-                        class="pointer-events: none; m-auto block max-w-0 group-hover:max-w-full transition-all duration-200 h-0.5 bg-accent"></span>
+                <a class="group rounded-md border border-primary bg-primary px-8 py-3 font-medium text-white shadow-sm smooth hover:bg-secondary"
+                    href="/search">
+                    Search for an item
+                    <span class="hover-underline"></span>
                 </a>
 
-                <a class="group rounded-md border border-gray-200 bg-gray-200 px-6 py-3 font-medium text-text hover:bg-gray-50 transition-colors duration-200"
-                    href="#">
-                    Register
+                <a class="group rounded-md border border-backgroundsecondary bg-backgroundsecondary px-6 py-3 font-medium text-text hover:bg-gray-50 smooth"
+                    href="/report">
+                    Report an item
                     <span class="hover-underline"></span>
                 </a>
             </div>

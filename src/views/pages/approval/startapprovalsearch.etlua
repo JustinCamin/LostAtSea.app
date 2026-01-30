@@ -1,0 +1,18 @@
+<div class="max-w-lg text-center justify-center m-auto items-center h-max-screen h-max pt-20 px-5 md:px-0">
+
+    <i class="bx bx-user-check text-8xl text-primary"></i>
+    <h2 class="text-4xl font-bold text-primary sm:text-3xl">
+        <strong class="text-accent group">Approve</strong>
+        items!
+    </h2>
+
+    <p class="mt-4 text-pretty text-textsecondary">
+        Select the organization or venue you last saw your item.
+    </p>
+
+    <div class="mt-6 space-y-2">
+        <input type="submit" style="display: none" />
+        <input id="org-search" type="search" placeholder="Start search..."
+            class="w-full shadow-lg rounded-lg border py-3 px-6 border-backgroundsecondary bg-backgroundsecondary hover:bg-background focus:border-primary smooth focus:outline-none">
+    </div>
+</div>

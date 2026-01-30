@@ -1,10 +1,10 @@
-<footer class="bg-background">
-	<div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+<footer class="bg-white">
+	<div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-16">
 
 		<div class="lg:flex lg:items-end lg:justify-between">
 			<div>
 				<div class="flex justify-center lg:justify-start">
-				<img src="/static/amiraprofile.jpg" alt="" class="size-10 object-cover">
+				<img src="/static/logoprimary.png" alt="" class="size-20 object-cover">
 			</div>
 
 			<p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-textsecondary lg:text-left">
@@ -17,7 +17,7 @@
 				<% for i, Info in ipairs({{Page="Home" , href="/" }, {Page="Search" , href="/search" }, {Page="Report" ,
 					href="/report" }, {Page="About Us" , href="/about" }}) do %>
 					<li>
-						<a class=" group transition-all duration-200 ease-ease-quart hover:font-bold"
+						<a class=" group smooth hover:font-bold"
 							href="<%= Info.href %>">
 							<%= Info.Page %>
 								<span class="hover-underline"></span>

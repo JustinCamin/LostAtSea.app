@@ -1,0 +1,9 @@
+<section>
+
+    <% if params.organization then %>
+        <% render('src.views.pages.search.orgsearch') %>
+        <% else %>
+    <% render('src.views.pages.search.startorgsearch') %>
+    <% render('src.views.components.orgsearchrender') %>
+    <% end %>
+</section>

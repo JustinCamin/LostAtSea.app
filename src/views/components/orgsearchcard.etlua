@@ -1,0 +1,56 @@
+<div id="<%= string.gsub(name, " %s+", "_" ) %>" class="flex flex-col md:flex-row border w-full min-h-25
+    border-backgroundsecondary rounded-xl p-4 gap-4">
+    <div class="aspect-square w-24 h-24 shrink-0">
+        <img src="/api/images/<%= organization_image_id %>" alt="" class="w-full h-full rounded-xl object-cover">
+    </div>
+
+    <div class="flex flex-col w-full">
+        <div class="flex align-middle items-center gap-1">
+            <h3 class="text-lg font-semibold text-text">
+                <%= name %>
+            </h3>
+            <h3 class="text-md text-textsecondary">• <%= type %>
+            </h3>
+        </div>
+        <div class="flex flex-row items-center text-xs text-textsecondary">
+            <i class="bx bx-location "></i>
+            <span>
+                <%= address %>
+            </span>
+        </div>
+        <p class="mt-2 line-clamp-3 text-sm/relaxed text-textsecondary">
+            <%= description %>
+        </p>
+        <div class="mt-1 flex gap-20 lg:gap-6">
+            <div class="flex items-center gap-1 text-textsecondary">
+                <i class="bx bx-search-big"></i>
+                <dd class="text-xs">
+                    <%= math.random(1, 5) %> Items reported
+                </dd>
+            </div>
+
+            <div class="flex items-center gap-1 text-textsecondary">
+                <i class="bx bx-clock"></i>
+                <dd class="text-xs">Last report: <%= math.random(1, 12) %> hours ago</dd>
+            </div>
+        </div>
+    </div>
+    <div class="flex items-end justify-end shrink-0">
+
+        <% if category == "report" and (not session or not session.user) then %>
+            <a class="group rounded-md border border-primary bg-primary px-8 py-3 font-medium text-white shadow-sm smooth hover:bg-secondary"
+                href="/login?returnto=<%= category %>?organization=<%= id %>">
+                Select Organization
+                <span class="hover-underline"></span>
+                
+            </a>
+            <% else %>
+                <a class="group rounded-md border border-primary bg-primary px-8 py-3 font-medium text-white shadow-sm smooth hover:bg-secondary"
+                    href="/<%= category %>?organization=<%= id %>">
+                    Select Organization
+                    <span class="hover-underline"></span>
+                </a>
+                <% end %>
+
+    </div>
+</div>
