@@ -1,5 +1,4 @@
-require('dotenv').config();
-const API_URL = process.env.API_ROUTER+"/api";
+const API_URL = "/api";
 
 const search = document.getElementById('org-search');
 const resultsContainer = document.getElementById('org-search-results');
