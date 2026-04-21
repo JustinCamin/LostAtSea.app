@@ -1,3 +1,6 @@
+require('dotenv').config();
+const API_URL = process.env.API_ROUTER+"/api";
+
 const search = document.getElementById('org-search');
 const resultsContainer = document.getElementById('org-search-results');
 
@@ -51,10 +54,10 @@ const loginForm = document.getElementById("login");
 if (loginForm) {
 
     const urlParams = new URLSearchParams(window.location.search);
-    const returnTo = urlParams.get("returnto") || "/"; // fallback to /
+    const returnTo = urlParams.get("returnto") || "/";
 
     loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault(); // prevent default form submit
+        e.preventDefault();
 
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
@@ -68,7 +71,7 @@ if (loginForm) {
 
         try {
             const response = await fetch(
-                "http://localhost:8080/api/login?email=" + encodeURIComponent(email) +
+                API_URL + "/login?email=" + encodeURIComponent(email) +
                 "&password=" + encodeURIComponent(password),
                 {
                     method: "POST",
@@ -85,7 +88,7 @@ if (loginForm) {
             const data = await response.json();
 
             if (data.success) {
-                // Redirect to returnto param if provided
+    
                 window.location.href = returnTo;
             } else {
                 alert(data.error || "Login failed");
@@ -102,10 +105,10 @@ const signupForm = document.getElementById("signup");
 if (signupForm) {
 
     const urlParams = new URLSearchParams(window.location.search);
-    const returnTo = urlParams.get("returnto") || "/"; // fallback to /
+    const returnTo = urlParams.get("returnto") || "/";
 
     signupForm.addEventListener("submit", async (e) => {
-        e.preventDefault(); // prevent default form submit
+        e.preventDefault(); 
 
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
@@ -120,7 +123,7 @@ if (signupForm) {
 
         try {
             const response = await fetch(
-                "http://localhost:8080/api/signup?email=" + encodeURIComponent(email) +
+                API_URL + "/signup?email=" + encodeURIComponent(email) +
                 "&password=" + encodeURIComponent(password) +
                 "&name=" + encodeURIComponent(name),
                 {
@@ -138,7 +141,7 @@ if (signupForm) {
             const data = await response.json();
 
             if (data.success) {
-                // Redirect to returnto param if provided
+                
                 window.location.href = "/login?returnto="+returnTo;
             } else {
                 alert(data.error || "Signup failed");
@@ -155,7 +158,7 @@ const reportForm = document.getElementById("report-form");
 
 if (reportForm) {
     const urlParams = new URLSearchParams(window.location.search);
-    const organization = urlParams.get("organization") || "1"; // fallback to /
+    const organization = urlParams.get("organization") || "1"; 
 
     reportForm.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -178,7 +181,7 @@ if (reportForm) {
                 const formData = new FormData();
                 formData.append("file", file);
 
-                const uploadResponse = await fetch("http://localhost:8080/api/upload", {
+                const uploadResponse = await fetch(API_URL + "/upload", {
                     method: "POST",
 
                     body: formData,
@@ -207,7 +210,7 @@ if (reportForm) {
                 "&image_id=" + encodeURIComponent(imageId || "") +
                 "&organization=" + encodeURIComponent(organization);
 
-            const reportResponse = await fetch("http://localhost:8080/api/reports", {
+            const reportResponse = await fetch(API_URL + "/reports", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
@@ -225,7 +228,7 @@ if (reportForm) {
             const data = await reportResponse.json();
 
             if (data.success) {
-                window.location.href = "/home"; // or wherever
+                window.location.href = "/search";
             } else {
                 alert(data.error || "Report submission failed.");
             }
@@ -241,12 +244,10 @@ document.addEventListener("click", async function (e) {
     const btn = e.target.closest("button");
     if (!btn) return;
 
-    // Make sure it's an approve button (optional: check class or parent)
     if (!btn.id.includes("_")) return;
 
-    e.preventDefault(); // prevent default link behavior
+    e.preventDefault(); 
 
-    // Split the ID
     const [text, reportId] = btn.id.split("_");
 
     if (text != "item" || !reportId) {
@@ -255,7 +256,7 @@ document.addEventListener("click", async function (e) {
     }
 
     try {
-        const response = await fetch("http://localhost:8080/api/reports/approve?id=" + encodeURIComponent(reportId), {
+        const response = await fetch(API_URL + "/reports/approve?id=" + encodeURIComponent(reportId), {
             method: "POST",
             credentials: "include",
         });

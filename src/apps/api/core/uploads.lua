@@ -14,17 +14,17 @@ function Controller.get(self)
 
 	if Id == 0 then
 		return {
-        redirect_to = "http://localhost:8080/static/beachlanding.jpg"
+        redirect_to = ENV.get("PAGE_ROUTER").."/static/beachlanding.jpg"
     }
 end
 
 	local Image = Images:find({id = tonumber(Id)})
 	if not Image then
-		return { redirect_to = "http://localhost:8080/static/beachlanding.jpg" }
+		return { redirect_to = ENV.get("PAGE_ROUTER").."/static/beachlanding.jpg" }
 	end
 
 	return {
-        redirect_to = "http://localhost:8080" ..Image.path
+        redirect_to = ENV.get("PAGE_ROUTER")..Image.path
     }
 end
 

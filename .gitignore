@@ -18,3 +18,5 @@ luarocks52/
 luarocks53/
 Uploads/
 .env
+
+config.lua
